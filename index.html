@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Элина Риянова — Карьерный эксперт и HR-ментор</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- GSAP & ScrollTrigger CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+    <!-- Background glowing floating shapes -->
+    <div class="bg-glow bg-glow-1">
+        <img src="images/bg-glow-1.svg" alt="" aria-hidden="true">
+    </div>
+    <div class="bg-glow bg-glow-2">
+        <img src="images/bg-glow-2.svg" alt="" aria-hidden="true">
+    </div>
+    <div class="bg-glow bg-glow-3"></div>
+
+    <!-- Header / Navigation -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">ЭР</span>
+                <span class="logo-text">Элина Риянова</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="#services" class="nav-link">Услуги</a>
+                <a href="#about" class="nav-link">Обо мне</a>
+                <a href="#reviews" class="nav-link">Отзывы</a>
+                <a href="#contacts" class="nav-link">Контакты</a>
+            </nav>
+            <div class="header-actions">
+                <a href="#contacts" class="btn btn-sm btn-primary magnetic-btn">Консультация</a>
+            </div>
+            <button class="burger-btn" aria-label="Открыть меню" id="burgerBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <nav class="mobile-nav">
+            <a href="#services" class="mobile-link">Услуги</a>
+            <a href="#about" class="mobile-link">Обо мне</a>
+            <a href="#reviews" class="mobile-link">Отзывы</a>
+            <a href="#contacts" class="mobile-link">Контакты</a>
+            <a href="#contacts" class="btn btn-primary mobile-cta">Бесплатная диагностика</a>
+        </nav>
+    </div>
+
+    <main>
+        <!-- Блок 1. Главный экран (Hero-блок) -->
+        <section class="hero" id="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge float-item">
+                        <span>🌟</span> Эксперт лиги HeadHunter • 12+ лет в HR • ТОП-30 HRtime
+                    </div>
+                    <h1 class="hero-title">
+                        Карьера без стресса: от сильного резюме до <span class="text-gradient">оффера мечты</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Помогаю соискателям уверенно менять профессию, проходить интервью на 95% и выходить на желаемый доход. А коллегам-HR — прокачивать экспертизу в подборе и оценке персонала.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#services" class="btn btn-primary magnetic-btn" data-tab="candidates">
+                            <span>💼 Я ищу работу / сменяю сферу</span>
+                        </a>
+                        <a href="#services" class="btn btn-secondary magnetic-btn" data-tab="hr">
+                            <span>🎯 Я HR / развиваю экспертизу</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-image-wrapper">
+                        <div class="hero-circle-bg"></div>
+                        <img src="images/elina-hero.png" alt="Элина Риянова — Карьерный эксперт" class="hero-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="hero-avatar-fallback" style="display:none;">
+                            <span>ЭР</span>
+                        </div>
+                        <div class="floating-card float-badge-1">
+                            <span class="icon">🚀</span>
+                            <div>
+                                <strong>95% интервью</strong>
+                                <p>успешного прохождения</p>
+                            </div>
+                        </div>
+                        <div class="floating-card float-badge-2">
+                            <span class="icon">⭐</span>
+                            <div>
+                                <strong>ТОП-30</strong>
+                                <p>рейтинга HRtime</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Бесконечная бегущая строка (Marquee) -->
+        <div class="marquee-section">
+            <div class="marquee-track">
+                <div class="marquee-item"><span>🌟</span> 12+ лет в HR</div>
+                <div class="marquee-item"><span>💼</span> Эксперт лиги HeadHunter</div>
+                <div class="marquee-item"><span>🚀</span> IT и Финансы</div>
+                <div class="marquee-item"><span>🏆</span> ТОП-30 HRtime</div>
+                <div class="marquee-item"><span>📈</span> 95% успешных интервью</div>
+                <div class="marquee-item"><span>🎯</span> Подбор и оценка персонала</div>
+                <!-- Duplicate for infinite seamless loop -->
+                <div class="marquee-item"><span>🌟</span> 12+ лет в HR</div>
+                <div class="marquee-item"><span>💼</span> Эксперт лиги HeadHunter</div>
+                <div class="marquee-item"><span>🚀</span> IT и Финансы</div>
+                <div class="marquee-item"><span>🏆</span> ТОП-30 HRtime</div>
+                <div class="marquee-item"><span>📈</span> 95% успешных интервью</div>
+                <div class="marquee-item"><span>🎯</span> Подбор и оценка персонала</div>
+            </div>
+        </div>
+
+        <!-- Блок 2. Цифры и масштаб (Плавающая строка доверия) -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card tilt-card">
+                        <div class="stat-number text-gradient">12+ лет</div>
+                        <div class="stat-label">В управлении персоналом и HR</div>
+                    </div>
+                    <div class="stat-card tilt-card">
+                        <div class="stat-number text-gradient">6 лет</div>
+                        <div class="stat-label">Глубокой экспертизы в IT-рекрутменте</div>
+                    </div>
+                    <div class="stat-card tilt-card">
+                        <div class="stat-number text-gradient">ТОП-30</div>
+                        <div class="stat-label">Независимого рейтинга экспертов HRtime</div>
+                    </div>
+                    <div class="stat-card tilt-card">
+                        <div class="stat-number text-gradient">Лига HH</div>
+                        <div class="stat-label">Официальный эксперт-партнер HeadHunter</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок 3. Услуги и курсы (Интерактивный блок с табами - Bento Grid) -->
+        <section class="services-section" id="services">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Направления работы</span>
+                    <h2 class="section-title">Выберите то, что актуально для вас</h2>
+                    <p class="section-desc">Работаю с запросами соискателей любого уровня и поддерживаю коллег-профессионалов</p>
+                </div>
+
+                <!-- Tabs Navigation -->
+                <div class="tabs-nav">
+                    <button class="tab-btn active" data-target="candidates">
+                        <span>💼 Соискателям</span>
+                    </button>
+                    <button class="tab-btn" data-target="hr">
+                        <span>🎯 Коллегам-HR</span>
+                    </button>
+                </div>
+
+                <!-- Tab Content 1: Candidates -->
+                <div class="tab-content active" id="tab-candidates">
+                    <div class="tab-intro">
+                        <p>Выгораете на текущем месте? Хотите сменить сферу, но боитесь отказов? Или не понимаете, как упаковать свой опыт? Я помогу пройти этот путь спокойно и результативно.</p>
+                    </div>
+
+                    <div class="services-bento-grid">
+                        <!-- Service Card 1 -->
+                        <div class="service-bento-card tilt-card">
+                            <div class="service-card-top">
+                                <div class="service-icon-wrap">📄</div>
+                                <div class="service-price">от 5 000 ₽</div>
+                            </div>
+                            <h3>Аудит и создание резюме</h3>
+                            <p class="service-desc">Глубокий разбор вашего текущего опыта, переупаковка достижений под требования рынка и ATS-систем. Вы получите сильное, продающее резюме, которое привлекает рекрутеров.</p>
+                            <ul class="service-features">
+                                <li>✓ Анализ текущего профиля</li>
+                                <li>✓ Оптимизация под ATS</li>
+                                <li>✓ Продающий заголовок и офер</li>
+                            </ul>
+                            <a href="#contacts" class="btn btn-outline service-btn">Заказать резюме</a>
+                        </div>
+
+                        <!-- Service Card 2 -->
+                        <div class="service-bento-card tilt-card">
+                            <div class="service-card-top">
+                                <div class="service-icon-wrap">🎯</div>
+                                <div class="service-price">от 5 000 ₽</div>
+                            </div>
+                            <h3>Подготовка к собеседованию</h3>
+                            <p class="service-desc">Имитация реального интервью в безопасной атмосфере. Разберем каверзные вопросы, научимся уверенно презентовать сильные стороны и работать со страхом оценки.</p>
+                            <ul class="service-features">
+                                <li>✓ Mock-интервью с разбором</li>
+                                <li>✓ Стратегия ответов на каверзные вопросы</li>
+                                <li>✓ Снятие страха оценки</li>
+                            </ul>
+                            <a href="#contacts" class="btn btn-outline service-btn">Пройти подготовку</a>
+                        </div>
+
+                        <!-- Service Card 3 (Featured Bento Box) -->
+                        <div class="service-bento-card tilt-card featured-bento">
+                            <div class="popular-badge">Хит</div>
+                            <div class="service-card-top">
+                                <div class="service-icon-wrap">🚀</div>
+                                <div class="service-price">от 10 000 ₽</div>
+                            </div>
+                            <h3>Пакет «Поиск работы под ключ»</h3>
+                            <p class="service-desc">Комплексное сопровождение: от стратегии поиска и упаковки профиля до выхода на оффер. Ваша личная поддержка на каждом этапе переговоров.</p>
+                            <ul class="service-features">
+                                <li>✓ Стратегия карьерного перехода</li>
+                                <li>✓ Сопровождение на переговорах</li>
+                                <li>✓ Личный ментор 24/7</li>
+                            </ul>
+                            <a href="#contacts" class="btn btn-primary service-btn">Хочу сопровождение</a>
+                        </div>
+                    </div>
+
+                    <!-- Requests Box -->
+                    <div class="requests-box">
+                        <h4>С какими запросами ко мне приходят:</h4>
+                        <div class="requests-tags">
+                            <span class="tag">Смена сферы деятельности (IT, маркетинг, управление)</span>
+                            <span class="tag">Выход из декрета или длительного перерыва</span>
+                            <span class="tag">Зарплатный рост и подготовка к повышению</span>
+                            <span class="tag">Синдром самозванца и потеря мотивации</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab Content 2: HR Colleagues -->
+                <div class="tab-content" id="tab-hr">
+                    <div class="tab-intro">
+                        <p>Делюсь многолетней практикой и проверенными методологиями. Помогаю выстраивать эффективный подбор, адаптацию и оценку персонала без выгорания команды.</p>
+                    </div>
+
+                    <div class="services-bento-grid hr-bento-grid">
+                        <!-- HR Card 1 -->
+                        <div class="service-bento-card tilt-card">
+                            <div class="service-card-top">
+                                <div class="service-icon-wrap">👥</div>
+                                <div class="service-price">от 6 000 ₽ / сессия</div>
+                            </div>
+                            <h3>Менторство и экспертные консультации для HR</h3>
+                            <p class="service-desc">Разбор ваших кейсов найма, аудит процессов в компании, построение профиля должности и воронки подбора (особенно в IT и digital).</p>
+                            <ul class="service-features">
+                                <li>✓ Разбор сложных кейсов найма</li>
+                                <li>✓ Построение воронки подбора</li>
+                                <li>✓ Аудит HR-процессов</li>
+                            </ul>
+                            <a href="#contacts" class="btn btn-outline service-btn">Записаться на менторство</a>
+                        </div>
+
+                        <!-- HR Card 2 -->
+                        <div class="service-bento-card tilt-card">
+                            <div class="service-card-top">
+                                <div class="service-icon-wrap">🎓</div>
+                                <div class="service-status">Скоро новый поток</div>
+                            </div>
+                            <h3>Авторские воркшопы и курсы</h3>
+                            <p class="service-desc">Практические программы по современным инструментам рекрутмента, оценке кандидатов по компетенциям и адаптации новичков.</p>
+                            <ul class="service-features">
+                                <li>✓ Современные методологии оценки</li>
+                                <li>✓ Практические фреймворки</li>
+                                <li>✓ Сертификат и закрытое комьюнити</li>
+                            </ul>
+                            <a href="#contacts" class="btn btn-primary service-btn">Узнать программу</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок 4. Обо мне и фундамент экспертизы -->
+        <section class="about-section" id="about">
+            <div class="about-camera-viewport">
+                <div class="container about-container">
+                    <div class="about-grid">
+                        <div class="about-text-content">
+                            <span class="section-tag">Об эксперте</span>
+                            <h2 class="section-title">За каждым резюме — живой человек, за каждым наймом — стратегия бизнеса</h2>
+                            <p class="about-lead">
+                                Привет! Я Элина Риянова. Более 12 лет я нахожусь по обе стороны баррикад: строила HR-процессы в компаниях, нанимала топ-специалистов и точно знаю, как мыслят работодатели.
+                            </p>
+                            <p class="about-text">
+                                Моя главная ценность — бережный и честный подход. Я не верю в шаблонные советы из интернета. Мы работаем с вашей уникальной историей, убираем тревогу и выстраиваем систему, которая приводит к офферу мечты.
+                            </p>
+
+                            <!-- Education & Certifications -->
+                            <div class="education-box">
+                                <h3>Образование и сертификаты</h3>
+                                <ul class="education-list">
+                                    <li>
+                                        <span class="edu-icon">🎓</span>
+                                        <div>
+                                            <strong>Высшее экономическое образование</strong>
+                                            <p>Уфимский государственный авиационный технический университет (УГАТУ)</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="edu-icon">📜</span>
+                                        <div>
+                                            <strong>Высшая школа карьерного консультирования (2025)</strong>
+                                            <p>Современные методологии карьерного трекинга</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="edu-icon">🏢</span>
+                                        <div>
+                                            <strong>Профессиональные программы и сертификации</strong>
+                                            <p>МегаФон, Академия АйТИ, City Business School</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="about-visual-side">
+                            <div class="about-card-banner tilt-card">
+                                <div class="banner-quote">“</div>
+                                <p>«Помогать людям находить дело своей жизни, а компаниям — идеальных профессионалов — моя главная профессиональная страсть». — Элина Риянова</p>
+                                <div class="banner-author">
+                                    <div class="author-avatar">ЭР</div>
+                                    <div>
+                                        <strong>Элина Риянова</strong>
+                                        <span>Карьерный эксперт, HR-консультант</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок 5. Живые истории и отзывы -->
+        <section class="reviews-section" id="reviews">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Отзывы и кейсы</span>
+                    <h2 class="section-title">Истории, которыми я горжусь</h2>
+                    <p class="section-desc">Результаты моих клиентов — лучшее подтверждение эффективности методик</p>
+                </div>
+
+                <div class="reviews-grid">
+                    <!-- Review 1: Lada Sadykova -->
+                    <div class="review-card tilt-card featured-review">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <strong>Лада Садыкова</strong>
+                                <span>Выпускница магистратуры</span>
+                            </div>
+                            <div class="review-badge">🚀 Оффер с 1-го собеседования</div>
+                        </div>
+                        <p class="review-text">
+                            «До работы с Элиной у меня было ощущение тупика: магистратура есть, а практического опыта уверенной самопрезентации нет. Элина помогла разложить всё по полочкам, пересобрать резюме и отработать страхи на имитации интервью. В итоге — оффер в компании мечты с первого же собеседования! Сейчас я уверенно прохожу 95% интервью и точно знаю бесценную цену своим навыкам. Спасибо за бережность и невероятную поддержку!»
+                        </p>
+                    </div>
+
+                    <!-- Review 2: Olga Terentyeva -->
+                    <div class="review-card tilt-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <strong>Ольга Терентьева</strong>
+                                <span>Специалист по коммуникациям</span>
+                            </div>
+                            <div class="rating">⭐⭐⭐⭐⭐</div>
+                        </div>
+                        <p class="review-text">
+                            «Элина обладает удивительным даром видеть сильные стороны там, где сам ты видишь только хаос из задач. Сессия дала мне четкую структуру, понимание моей реальной стоимости на рынке и мощный заряд уверенности. Очень рекомендую коллегам и соискателям!»
+                        </p>
+                    </div>
+
+                    <!-- Review 3: Elena Enikeeva -->
+                    <div class="review-card tilt-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <strong>Елена Еникеева</strong>
+                                <span>HR-специалист</span>
+                            </div>
+                            <div class="rating">⭐⭐⭐⭐⭐</div>
+                        </div>
+                        <p class="review-text">
+                            «Обратилась за менторством и консультацией по сложным кейсам найма. Получила не просто теорию, а готовые фреймворки, которые сразу внедрила в работу. Элина — профессионал высочайшего уровня с огромным сердцем».
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок 6. Финальный призыв к действию (Контакты) -->
+        <section class="contacts-section" id="contacts">
+            <div class="contacts-clip-wrapper">
+                <div class="container">
+                    <div class="contacts-box tilt-card">
+                        <div class="contacts-content">
+                            <span class="section-tag tag-light">Начать изменения</span>
+                            <h2 class="section-title">Сделаем первый шаг к вашему результату вместе</h2>
+                            <p class="contacts-desc">
+                                Запишитесь на <strong>бесплатную 15-минутную экспресс-диагностику</strong>. Мы разберем вашу ситуацию, наметим план действий и поймем, как я могу вам помочь.
+                            </p>
+                            <div class="contact-buttons">
+                                <a href="https://t.me/" target="_blank" rel="noopener" class="btn btn-telegram magnetic-btn">
+                                    <span>💬 Написать в Telegram</span>
+                                </a>
+                                <a href="https://whatsapp.com/" target="_blank" rel="noopener" class="btn btn-whatsapp magnetic-btn">
+                                    <span>🟢 Написать в WhatsApp</span>
+                                </a>
+                                <a href="mailto:elina.riyanova@example.com" class="btn btn-outline-light magnetic-btn">
+                                    <span>✉️ elina.riyanova@example.com</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <span class="logo-icon">ЭР</span>
+                <span class="logo-text">Элина Риянова</span>
+            </div>
+            <p class="footer-copy">© 2026 Элина Риянова. Эксперт по карьере и HR-развитию. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Script file -->
+    <script src="script.js"></script>
+</body>
+</html>
