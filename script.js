@@ -283,19 +283,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 6. Smooth Anchor Links Navigation
-    const anchorLinks = document.querySelectorAll('a[href^="#"]');
-
-    anchorLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            const targetId = link.getAttribute('href');
-            if (targetId === '#') return;
-
-            const targetElement = document.querySelector(targetId);
-            if (!targetElement) return;
-
-            e.preventDefault();
-            targetElement.scrollIntoView({ behavior: 'smooth' });
+    // 7. Overflow Detector for Debugging Mobile Layout
+    window.addEventListener('load', () => {
+        const docWidth = window.innerWidth;
+        document.querySelectorAll('*').forEach(el => {
+            const box = el.getBoundingClientRect();
+            if (box.right > docWidth + 1) {
+                console.warn('[Overflow Detector] Элемент выпирает за правую границу экрана:', el, box.right, 'px при ширине окна', docWidth, 'px');
+            }
         });
     });
 });

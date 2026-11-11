@@ -1,5 +1,12 @@
 /* ==========================================
-   Design System & Styles — Elina Riyanova Landing
+   Page Wrapper for Mobile Overflow Lock
+   ========================================== */
+.page-wrapper {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    position: relative;
+}
    Enhanced Bento Density & High-End Animations
    ========================================== */
 
@@ -1180,9 +1187,13 @@ button {
         padding: 40px 20px;
     }
 
-    .footer-container {
-        flex-direction: column;
-        gap: 16px;
-        text-align: center;
+    .float-badge-1 {
+        bottom: 25px;
+        left: 8px;
+    }
+
+    .float-badge-2 {
+        top: 35px;
+        right: 8px;
     }
 }
