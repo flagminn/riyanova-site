@@ -1,12 +1,5 @@
 /* ==========================================
-   Page Wrapper for Mobile Overflow Lock
-   ========================================== */
-.page-wrapper {
-    width: 100%;
-    max-width: 100vw;
-    overflow-x: hidden;
-    position: relative;
-}
+   Design System & Styles — Elina Riyanova Landing
    Enhanced Bento Density & High-End Animations
    ========================================== */
 
@@ -28,6 +21,16 @@
     --radius-md: 20px;
     --radius-lg: 32px;
     --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================
+   Page Wrapper for Mobile Overflow Lock
+   ========================================== */
+.page-wrapper {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    position: relative;
 }
 
 * {
@@ -88,7 +91,8 @@ button {
 }
 
 .text-gradient {
-    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+    color: #7C3AED;
+    background: linear-gradient(135deg, #7C3AED 0%, #06B6D4 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -161,7 +165,8 @@ button {
     width: 40px;
     height: 40px;
     border-radius: 12px;
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    background: #7C3AED;
+    background: linear-gradient(135deg, #7C3AED 0%, #06B6D4 100%);
     color: white;
     display: flex;
     align-items: center;
@@ -272,7 +277,9 @@ button {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-hover));
+    background-color: #7C3AED;
+    background: #7C3AED;
+    background: linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%);
     color: white;
     box-shadow: 0 8px 24px rgba(124, 58, 237, 0.3);
 }
@@ -503,7 +510,9 @@ button {
    Infinite Marquee (Бегущая строка)
    ========================================== */
 .marquee-section {
-    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    background: rgba(124, 58, 237, 0.06);
+    border-top: 1px solid rgba(124, 58, 237, 0.15);
+    border-bottom: 1px solid rgba(124, 58, 237, 0.15);
     padding: 16px 0;
     overflow: hidden;
     white-space: nowrap;
@@ -523,7 +532,7 @@ button {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    color: white;
+    color: #1E222B;
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 700;
     font-size: 1.05rem;
