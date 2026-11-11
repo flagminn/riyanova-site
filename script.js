@@ -191,25 +191,48 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Cascade Reveal for all sections with back.out & clearProps: 'all'
+        // Cascade Reveal for all sections with responsive matchMedia
         const animatedSections = document.querySelectorAll('.stats-section, .services-section, .reviews-section, .contacts-section');
         
         animatedSections.forEach(section => {
             const elements = section.querySelectorAll('.stat-card, .service-bento-card, .review-card, .about-text-content, .about-card-banner, .contacts-box, .section-header');
             
-            gsap.from(elements, {
-                scrollTrigger: {
-                    trigger: section,
-                    start: 'top 82%',
-                    toggleActions: 'play none none none'
+            ScrollTrigger.matchMedia({
+                // Desktop
+                "(min-width: 769px)": function() {
+                    gsap.from(elements, {
+                        scrollTrigger: {
+                            trigger: section,
+                            start: 'top 82%',
+                            toggleActions: 'play none none none'
+                        },
+                        opacity: 0,
+                        y: 35,
+                        scale: 0.96,
+                        duration: 1.0,
+                        stagger: 0.15,
+                        ease: 'back.out(1.4)',
+                        clearProps: 'all'
+                    });
                 },
-                opacity: 0,
-                y: 35,
-                scale: 0.96,
-                duration: 1.0,
-                stagger: 0.15,
-                ease: 'back.out(1.4)',
-                clearProps: 'all'
+                // Mobile
+                "(max-width: 768px)": function() {
+                    gsap.from(elements, {
+                        scrollTrigger: {
+                            trigger: section,
+                            start: 'top 88%',
+                            toggleActions: 'play none none none'
+                        },
+                        opacity: 0,
+                        y: 20,
+                        x: 0, // No horizontal shift on mobile to prevent overflow
+                        scale: 0.98,
+                        duration: 0.8,
+                        stagger: 0.1,
+                        ease: 'power2.out',
+                        clearProps: 'all'
+                    });
+                }
             });
         });
 

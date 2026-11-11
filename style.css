@@ -32,6 +32,8 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 body {
@@ -40,7 +42,12 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    max-width: 100%;
     position: relative;
+}
+
+section {
+    overflow-x: clip;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -1131,6 +1138,26 @@ button {
 }
 
 @media (max-width: 768px) {
+    html, body {
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+
+    img, .hero-photo, .hero-avatar-fallback {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 8vw, 2.4rem);
+        word-break: break-word;
+    }
+
+    .section-title {
+        font-size: clamp(1.8rem, 7vw, 2.1rem);
+        word-break: break-word;
+    }
+
     .nav-menu,
     .header-actions {
         display: none;
@@ -1138,14 +1165,6 @@ button {
 
     .burger-btn {
         display: flex;
-    }
-
-    .hero-title {
-        font-size: 2.4rem;
-    }
-
-    .section-title {
-        font-size: 2.1rem;
     }
 
     .stats-grid {
